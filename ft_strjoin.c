@@ -1,35 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 13:12:54 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/11 19:29:40 by aoudija          ###   ########.fr       */
+/*   Created: 2022/10/13 10:59:01 by aoudija           #+#    #+#             */
+/*   Updated: 2022/10/13 14:55:03 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	j;
+	int		len;
+	char	*sj;
+	int		i;
+	int		d;
+	int		s;
 
 	i = 0;
-	j = 0;
-	if (*needle == '\0')
-		return (haystack);
-	while ((haystack[i] != '\0' || needle[j] != '\0') && i < len)
+	d = ft_strlen(s1);
+	s = ft_strlen(s2);
+	len = d + s;
+	sj = (char *)malloc(len + 1);
+	if (sj == NULL)
+		return (NULL);
+	sj = s1;
+	while (s2[i])
 	{
-		if (haystack[i] == needle[j])
-			j++;
-		else if (haystack[i] != needle[j])
-			j = 0;
+		sj[d + i] = s2[i];
 		i++;
 	}
-	if (j == 0)
-		return (NULL);
-	return (haystack + (i - j));
+	sj[len] = 0;
+	return (sj);
+}
+
+int main()
+{
+	char p[] = "amine";
+	char s[] = " oudija";
+	char *d;
+	d = ft_strjoin(p,s);
+	printf("(%s)\n",d );
 }

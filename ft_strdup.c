@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 13:12:54 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/11 19:29:40 by aoudija          ###   ########.fr       */
+/*   Created: 2022/10/12 11:54:36 by aoudija           #+#    #+#             */
+/*   Updated: 2022/10/12 13:31:13 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strdup(const char *s1)
 {
-	int	i;
-	int	j;
+	int		i;
+	char	*s2;
 
 	i = 0;
-	j = 0;
-	if (*needle == '\0')
-		return (haystack);
-	while ((haystack[i] != '\0' || needle[j] != '\0') && i < len)
+	s2 = (char *)ft_calloc(ft_strlen(s1), 1);
+	while (s1[i])
 	{
-		if (haystack[i] == needle[j])
-			j++;
-		else if (haystack[i] != needle[j])
-			j = 0;
+		s2[i] = s1[i];
 		i++;
 	}
-	if (j == 0)
-		return (NULL);
-	return (haystack + (i - j));
+	return (s2);
 }

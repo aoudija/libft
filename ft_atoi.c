@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 13:12:54 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/11 19:29:40 by aoudija          ###   ########.fr       */
+/*   Created: 2022/10/11 19:30:30 by aoudija           #+#    #+#             */
+/*   Updated: 2022/10/12 11:51:15 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int	ft_atoi(const char *str)
 {
-	int	i;
-	int	j;
+	int	s;
+	int	r;
+	int	nb;
 
-	i = 0;
-	j = 0;
-	if (*needle == '\0')
-		return (haystack);
-	while ((haystack[i] != '\0' || needle[j] != '\0') && i < len)
-	{
-		if (haystack[i] == needle[j])
-			j++;
-		else if (haystack[i] != needle[j])
-			j = 0;
-		i++;
-	}
-	if (j == 0)
-		return (NULL);
-	return (haystack + (i - j));
+	nb = 0;
+	s = 1;
+	if (*str > 0 && *str <= 13 || *str == 32)
+		str++;
+	if (*str == '-')
+		s = s * (-1);
+	if (*str == '-' || *str == '+')
+		str++;
+	while (str != '\0')
+		nb = nb * 10 + str - 48;
+	return (nb * s);
 }
