@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:59:01 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/13 14:55:03 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/13 15:15:20 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	sj[len] = 0;
 	return (sj);
-}
-
-int main()
-{
-	char p[] = "amine";
-	char s[] = " oudija";
-	char *d;
-	d = ft_strjoin(p,s);
-	printf("(%s)\n",d );
 }
