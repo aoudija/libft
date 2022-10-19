@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:42:48 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/16 14:53:52 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/19 12:40:44 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memset(void *str, int c, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-int		ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 int		ft_strcpy(char *str);
 void	ft_bzero(void *s, size_t n);
 int		ft_toupper(int c);
