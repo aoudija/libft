@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:00:47 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/20 18:37:15 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/20 18:39:28 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,13 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	j = 0;
-	x = lnstr(s, j, c);	
+	x = lnstr(s, j, c);
 	while (s[j])
 	{
 		if (s[j] == c || !s[j + 1])
 		{
 			strs[i] = malloc(x + 1);
-			if(strs[i] == NULL)
+			if (strs[i] == NULL)
 				return (NULL);
 			k = 0;
 			if (s[j + 1] == 0)
@@ -111,15 +111,4 @@ char	**ft_split(char const *s, char c)
 	}
 	strs[i] = 0;
 	return (rmemptystr(strs, ct));
-}
-
-int	main()
-{
-	char **s = ft_split(" hello worl 1337sfsg ", ' ');
-	int i = 0;
-	while (s[i] != 0)
-	{
-		printf("'%s'\n", s[i]);
-		i++;
-	}
 }
