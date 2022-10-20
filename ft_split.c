@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:00:47 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/19 12:39:54 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/20 13:07:14 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,32 @@ int	countc(char *tr, char c)
 
 	ct = 0;
 	i = 0;
-	while (tr[i] != '\0')
+	while (tr[i])
 	{
-		if (tr[i] == c)
+		if (tr[i] == c && tr[i + 1] != c)
 			ct++;
 		i++;
 	}
+	printf("%d\n", ct);
 	return (ct);
+}
+
+int	lnstr(char *tr, int j,char c)
+{
+	int	i;
+
+	i = 0;
+	if (tr[j] == c)
+		j++;
+	while (tr[j] != 0 && tr[j] != c)
+	{
+		//printf("tr[j] : %c\n", tr[j]);
+		i++;
+		j++;
+	}
+	//printf("%d\n", i);
+	//printf("----\n");
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)
@@ -83,45 +102,47 @@ char	**ft_split(char const *s, char c)
 	int		k;
 
 	set[0] = c;
-	x = 0;
-	// tr = malloc(ft_strlen(ft_strtrim(s, set)));
 	tr = ft_strtrim(s, set);
 	ct = countc(tr, c);
-	strs = malloc(sizeof(char *) * (ct + 1));
+	strs = malloc(sizeof(char *) * (ct + 2));
 	if (strs == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (tr[j] && i < ct + 1)
+	x = lnstr(tr, j, c);	
+	while (tr[j])
 	{
-		if (tr[j] == c)
+		if (tr[j] == c || !tr[j + 1])
 		{
-			strs[i] = malloc(j - x + 1);
+			strs[i] = malloc(x + 1);
 			if(strs[i] == NULL)
 				return (NULL);
-			x = j - x - 1;
 			k = 0;
-			while (k < j)
-			{printf("h");
-				strs[i][k] = tr[x];
-				x++;
+			if (tr[j + 1] == 0)
+				j++;
+			while (x > 0)
+			{
+				strs[i][k] = tr[j - x];
 				k++;
+				x--;
 			}
+			x = lnstr(tr, j, c);
+			strs[i][k] = 0;
 			i++;
 		}
 		j++;
 	}
+	strs[i] = 0;
 	return (strs);
 }
 
 int	main()
 {
-	
-	char **s = ft_split("amineaminea", 'a');
+	char **s = ft_split("dhello worl d 1337 sfsg d", 'd');
 	int i = 0;
 	while (s[i])
 	{
-		printf("%s\n", s[i]);
+		printf("'%s'\n", s[i]);
 		i++;
 	}
 }
