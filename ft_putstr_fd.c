@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 11:41:05 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/21 11:43:04 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:22:38 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
-	while (s[i])
-	{
-		ft_putchar_fd(fd, s[i], 1);
-	}
+	i = -1;
+	while (s[++i])
+		ft_putchar_fd(s[i], fd);
 	s[i] = 0;
 }
