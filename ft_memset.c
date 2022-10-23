@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:56:24 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/11 11:08:04 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/23 09:17:50 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *str, int c, size_t n)
 {
 	unsigned char	*stri ;
-	int				i;
+	size_t			i;
 
 	stri = (unsigned char *) str;
 	i = 0;

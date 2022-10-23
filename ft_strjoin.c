@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:59:01 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/13 15:15:20 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/23 09:41:09 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	sj = (char *)malloc(len + 1);
 	if (sj == NULL)
 		return (NULL);
-	sj = s1;
+	sj = (char *)s1;
 	while (s2[i])
 	{
 		sj[d + i] = s2[i];

@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:45:08 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/10 12:24:33 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/23 09:42:41 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int	r;
+	size_t	i;
+	int		r;
 
 	r = 0;
 	i = 0;

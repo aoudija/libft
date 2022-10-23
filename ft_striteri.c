@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 20:58:21 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/20 21:01:39 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/23 09:14:51 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	i = 0;
-	while (ss[i])
+	while (s[i])
 	{
-		f(i, ss + i);
+		f(i, s + i);
 		i++;
 	}
 }

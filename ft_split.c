@@ -6,13 +6,13 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:00:47 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/20 18:39:28 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/23 15:42:10 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	countc(char *s, char c)
+int	countc(char const *s, char c)
 {
 	int	i;
 	int	ct;
@@ -29,7 +29,7 @@ int	countc(char *s, char c)
 	return (ct);
 }
 
-int	lnstr(char *s, int j, char c)
+int	lnstr(const char *s, int j, char c)
 {
 	int	i;
 
@@ -65,12 +65,13 @@ char	**rmemptystr(char **strs, int ct)
 	sfinal[k] = 0;
 	return (sfinal);
 }
-
-// char	**strop()
-
-char	**ft_split(char const *s, char c)
+char *optimize(char *s,int i)
 {
-	char	*set;
+	s = malloc(i + 1)
+}
+char	**ft_split(char *s, char c)
+{
+	char	set[2];
 	char	**strs;
 	int		ct;
 	int		i;
@@ -79,6 +80,7 @@ char	**ft_split(char const *s, char c)
 	int		k;
 
 	set[0] = c;
+	set[1] = 0;
 	s = ft_strtrim(s, set);
 	ct = countc(s, c);
 	strs = malloc(sizeof(char *) * (ct + 2));
@@ -87,7 +89,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	x = lnstr(s, j, c);
-	while (s[j])
+	while (s[j++])
 	{
 		if (s[j] == c || !s[j + 1])
 		{
@@ -104,10 +106,8 @@ char	**ft_split(char const *s, char c)
 				x--;
 			}
 			x = lnstr(s, j, c);
-			strs[i][k] = 0;
-			i++;
+			strs[i++][k] = 0;
 		}
-		j++;
 	}
 	strs[i] = 0;
 	return (rmemptystr(strs, ct));

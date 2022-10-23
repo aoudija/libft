@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 12:04:44 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/10 12:21:31 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/23 12:04:51 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		i;
-	char	*s1;
+	size_t		i;
+	char		*s1;
 
 	s1 = (char *) s;
 	i = 0;

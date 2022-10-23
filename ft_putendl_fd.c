@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 11:46:37 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/21 11:51:49 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/23 09:18:55 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	write(fd, '\n', 1);
+	write(fd, &"\n", 1);
 }
