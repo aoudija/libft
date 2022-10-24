@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:30:18 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/09 17:28:23 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/24 08:57:23 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	c += 32;
-	return (c);
+	if (!ft_isalpha(c))
+		return(c);
+	return (c + 32);
 }

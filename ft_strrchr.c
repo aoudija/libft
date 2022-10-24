@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:14:32 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/23 09:48:15 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/24 09:42:20 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@ char	*ft_strrchr(const char *p, int c)
 	int		i;
 	char	*s;
 
+	c =(char)c;
 	s = (char *)p;
 	i = ft_strlen(s);
-	while (s[i] != c)
+	while (i >= 0)
 	{
+		if (s[i] == c)
+			return (s + i);
 		i--;
 	}
-	return (s + i);
+	return (NULL);
 }

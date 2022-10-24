@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:00:47 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/23 15:42:10 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/24 13:21:12 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,11 @@ char	**rmemptystr(char **strs, int ct)
 	sfinal[k] = 0;
 	return (sfinal);
 }
-char *optimize(char *s,int i)
-{
-	s = malloc(i + 1)
-}
+// char *optimize(char *s,int i)
+// {
+// 	s = malloc(i + 1);
+// 	return (s);
+// }
 char	**ft_split(char *s, char c)
 {
 	char	set[2];
