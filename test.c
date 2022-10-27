@@ -2,14 +2,6 @@
 
 int main()
 {
-	char **s;
-    //char *sh;
-	int i = 0;
-    char *l = "   amine oudija  ";
-	s = ft_split(l,' ');
-	while (s[i])
-	{
-		printf("'%s'\n",s[i]);
-		i++;
-	}
+	char * s = ft_strtrim(" xxxxx xtripouille   x x ", " x");
+	printf("&%s&",s);
 }

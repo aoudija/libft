@@ -6,48 +6,39 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 14:23:58 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/13 10:55:24 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/27 12:32:39 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// char	*ft_strnstr(const char *haystack, const char *needle)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 0;
-// 	j = 0;
-// 	if (*needle == '\0')
-// 		return (haystack);
-// 	while ((haystack[i] != '\0' || needle[j] != '\0'))
-// 	{
-// 		if (haystack[i] == needle[j])
-// 			j++;
-// 		else if (haystack[i] != needle[j])
-// 			j = 0;
-// 		i++;
-// 	}
-// 	if (j == 0)
-// 		return (NULL);
-// 	return (haystack + (i - j));
-// }
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
+	size_t	i;
 	char	*sub;
+	size_t	j;
 
-	sub = (char *)malloc(len + 1);
+	if (s == 0)
+		return (0);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (len < (ft_strlen(s) - start))
+		sub = malloc(len + 1);
+	else
+		sub = malloc(ft_strlen(s) - start + 1);
 	if (sub == NULL)
 		return (NULL);
 	i = 0;
-	while (start <= len && s[start] != 0)
+	j = 0;
+	while (s[i])
 	{
-		sub[i] = s[start];
+		if (i >= start && j < len)
+		{
+			sub[j] = s[i];
+			j++;
+		}
 		i++;
-		start++;
 	}
-	sub[i] = 0;
+	sub[j] = 0;
 	return (sub);
 }

@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 13:44:20 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/24 13:23:36 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/26 14:12:25 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 
 	d = ft_strlen(dst);
 	i = 0;
-	if (n < d)
-		return (d + n);
-	while (src[i] && i <= n)
+	if (n <= d)
+		return (n + ft_strlen(src));
+	while (*dst)
+		dst++;
+	while (src[i] && i < n - d -1)
 	{
-		dst[d + i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dst[d + i] = 0;
-	return (i + d);
+	dst[i] = 0;
+	return (d + ft_strlen(src));
 }

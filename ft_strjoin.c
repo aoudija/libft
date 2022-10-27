@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:59:01 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/23 09:41:09 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/27 12:44:24 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		len;
 	char	*sj;
-	int		i;
 	int		d;
 	int		s;
 
-	i = 0;
 	d = ft_strlen(s1);
 	s = ft_strlen(s2);
 	len = d + s;
 	sj = (char *)malloc(len + 1);
 	if (sj == NULL)
 		return (NULL);
-	sj = (char *)s1;
-	while (s2[i])
-	{
-		sj[d + i] = s2[i];
-		i++;
-	}
+	ft_memcpy(sj,s1,d);
+	ft_memcpy(sj + d, s2,s);
 	sj[len] = 0;
 	return (sj);
 }
