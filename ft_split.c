@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:00:47 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/28 12:57:13 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/28 19:48:00 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	countc(char const *s, char c)
 	return (ct);
 }
 
-int	lnstr(char *s, int j, char c)
+int	lnstr(const char *s, int j, char c)
 {
 	int	i;
 
@@ -69,41 +69,34 @@ char	**ft_split(char *s, char c)
 {
 	char	set[2];
 	char	**strs;
-	char	*tr;
 	int		ct;
 	int		i;
 	int		j;
 	int		x;
-	int		k;
 
 	set[0] = c;
 	set[1] = 0;
-	tr = ft_strtrim(s, set);
+	s = ft_strtrim(s, set);
 	ct = countc(s, c);
-	strs = malloc(sizeof(char *) * (ct + 2));
-	if (strs == NULL)
+	if (!(strs = malloc(sizeof(char *) * (ct + 2))))
 		return (NULL);
 	i = 0;
 	j = 0;
-	x = lnstr(tr, j, c);
-	while (tr[j++])
+	x = lnstr(s, j, c);
+	while (s[j++])
 	{
-		if (tr[j] == c || !tr[j + 1])
+		if (s[j] == c || !s[j + 1])
 		{
 			strs[i] = malloc(x + 1);
 			if (strs[i] == NULL)
 				return (NULL);
-			k = 0;
-			if (tr[j + 1] == 0)
+			// if (!(strs[i] = malloc(x + 1)))
+			// 	return (NULL);
+			if (s[j + 1] == 0)
 				j++;
-			while (x > 0)
-			{
-				strs[i][k] = tr[j - x];
-				k++;
-				x--;
-			}
-			x = lnstr(tr, j, c);
-			strs[i++][k] = 0;
+			strs[i] = ft_substr(s, j - x, x);
+			x = lnstr(s, j, c);
+			i++;
 		}
 	}
 	strs[i] = 0;

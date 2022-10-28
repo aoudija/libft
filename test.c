@@ -2,8 +2,11 @@
 
 int main()
 {
-	char ** s = ft_split(" xxx xx   xarmx x", ' ');
+	char ** s = ft_split(" t t t  tripouille  42  ", ' ');
 	int i = 0;
 	while (s[i])
-		printf("&%s&\n",s[i++]);
+	{
+		printf("&%s&\n",s[i]);
+		i++;
+	}
 }
