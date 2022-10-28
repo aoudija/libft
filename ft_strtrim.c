@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:22:17 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/27 23:42:01 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/27 23:56:25 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ char		*ft_strtrim(char const *s1, char const *set)
 
 	i = index_start(s1, set);
 	j = index_end(s1, set);
+	if (i >= j)
+		return (ft_strdup(""));
 	if (s1 == NULL)
 		return (NULL);
 	if (set == NULL)
 		return (ft_strdup(s1));
-	// if (i >= j)
-	// 	return (ft_strdup(""));
-	tr = (char *)malloc(sizeof(char) * (j - i + 1));
+	tr = malloc(j - i + 1);
 	if (tr == NULL)
 		return (NULL);
 	ft_strlcpy(tr, s1 + i, j - i + 1);
