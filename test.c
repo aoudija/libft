@@ -2,6 +2,8 @@
 
 int main()
 {
-	char * s = ft_strtrim(" xxxxx xtripouille   x x ", " x");
-	printf("&%s&",s);
+	char ** s = ft_split(" xxx xx   xarmx x", ' ');
+	int i = 0;
+	while (s[i])
+		printf("&%s&\n",s[i++]);
 }
