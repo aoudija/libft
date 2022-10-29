@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 12:51:21 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/24 13:11:38 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/29 09:52:30 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t count)
 {
-	int	i;
-	// int r;
+	int		i;
 	char	*p1;
 	char	*p2;
 

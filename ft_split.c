@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:00:47 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/29 08:35:28 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/29 10:35:10 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,80 +28,72 @@ int	countc(char const *s, char c)
 	return (ct);
 }
 
-int	lnstr(const char *s, int j, char c)
+void	*ft_free(char **table)
 {
 	int	i;
 
 	i = 0;
-	if (s[j] == c)
-		j++;
-	while (s[j] != 0 && s[j] != c)
+	while (table[i])
 	{
+		free(table[i]);
 		i++;
-		j++;
 	}
-	return (i);
+	free(table);
+	return (NULL);
 }
 
-// char	**rmemptystr(char **strs, int ct)
-// {
-// 	int		i;
-// 	int		k;
-// 	char	**sfinal;
-
-// 	i = 0;
-// 	k = 0;
-// 	sfinal = malloc(sizeof(char *) * (ct + 2));
-// 	while (strs[i])
-// 	{
-// 		if (strs[i][0] != 0)
-// 		{
-// 			sfinal[k] = ft_strdup(strs[i]);
-// 			k++;
-// 		}
-// 		i++;
-// 	}
-// 	sfinal[k] = 0;
-// 	return (sfinal);
-// }
-char **ft_optimize(char **str , c)
+char	**amin(char **str, char c, char *s)
 {
-	
+	int	i;
+	int	j;
+	int	x;
+
+	i = 0;
+	j = 0;
+	x = 0;
+	while (s[j])
+	{
+		while (s[j] && s[j] != c)
+		{	
+			i++;
+			j++;
+		}	
+		str[x++] = ft_substr(s, j - i, i);
+		if (!str)
+			return (ft_free(str));
+		while (s[j] && s[j] == c)
+			j++;
+		i = 0;
+	}
+	str[x] = NULL;
+	return (str);
 }
-char	**ft_split(char *s, char c)
+
+char	**ft_split(char *ss, char c)
 {
 	char	set[2];
+	char	*s;
 	char	**strs;
-	int		ct;
-	int		i;
-	int		j;
 	int		x;
 
 	set[0] = c;
 	set[1] = 0;
-	s = ft_strtrim(s, set);
-	ct = countc(s, c);
-	if (!(strs = malloc(sizeof(char *) * (ct + 2))))
-		return (NULL);
-	i = 0;
-	j = 0;
-	x = lnstr(s, j, c);
-	while (s[j++])
+	s = ft_strtrim(ss, set);
+	x = countc(s, c);
+	if (s == NULL || s[0] == 0)
 	{
-		if (s[j] == c || !s[j + 1])
-		{
-			// strs[i] = malloc(x + 1);
-			// if (strs[i] == NULL)
-			// 	return (NULL);
-			// // if (!(strs[i] = malloc(x + 1)))
-			// // 	return (NULL);
-			if (s[j + 1] == 0)
-				j++;
-			strs[i] = ft_substr(s, j - x, x);
-			x = lnstr(s, j, c);
-			i++;
-		}
+		strs = malloc(sizeof(char *));
+		strs[0] = 0;
+		free(s);
+		return (strs);
 	}
-	strs[i] = 0;
-	return (rmemptystr(strs, ct));
+	strs = malloc(sizeof(char *) * (x + 2));
+	if (!(strs))
+	{
+		free(s);
+		return (NULL);
+	}
+	strs = amin(strs, c, s);
+	free (s);
+	return (strs);
 }

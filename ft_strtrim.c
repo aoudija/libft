@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:22:17 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/27 23:56:25 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/29 10:00:33 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	index_start(const char *s1, const char *set)
 	size_t	j;
 
 	i = 0;
-	j = ft_strlen(s1);	
+	j = ft_strlen(s1);
 	while (i < j)
 	{
 		if (ft_strchr(set, s1[i]) == 0)
@@ -44,7 +44,7 @@ int	index_end(const char *s1, const char *set)
 	return (j - i);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;

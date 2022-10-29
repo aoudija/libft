@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:59:01 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/27 12:44:24 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/29 09:56:02 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	sj = (char *)malloc(len + 1);
 	if (sj == NULL)
 		return (NULL);
-	ft_memcpy(sj,s1,d);
-	ft_memcpy(sj + d, s2,s);
+	ft_memcpy(sj, s1, d);
+	ft_memcpy(sj + d, s2, s);
 	sj[len] = 0;
 	return (sj);
 }

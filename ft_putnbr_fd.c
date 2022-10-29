@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 21:17:16 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/21 22:41:33 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/29 13:39:27 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ void	ft_putnbr_fd(int n, int fd)
 
 	s = ft_itoa(n);
 	ft_putstr_fd(s, fd);
+	free(s);
 }

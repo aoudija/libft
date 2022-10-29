@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 20:08:27 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/27 11:22:30 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/29 09:51:44 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 	p = malloc(i);
 	if (!p)
 		return (NULL);
-	while(i--)
+	while (i--)
 		p[i] = 0;
 	return (p);
 }

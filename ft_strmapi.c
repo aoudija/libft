@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:13:12 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/20 20:58:08 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/29 12:43:35 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ss = ft_strdup(s);
 	while (ss[i])
 	{
-		f(i, ss[i]);
+		ss[i] = f(i, ss[i]);
 		i++;
 	}
 	return (ss);

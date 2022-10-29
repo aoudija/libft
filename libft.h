@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:42:48 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/27 09:07:05 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/29 13:11:24 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 char	*ft_itoa(int n);
 void	*ft_memchr(const void *s, int c, size_t n);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
