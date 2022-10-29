@@ -15,15 +15,21 @@ OBG = $(FILES:.c=.o)
 %.o:%.c $(DEPS)
 	$(CC) $(CFLAGS) -c $<
 
-all:$(OBG)
+all:$(NAME)
+
+$(NAME):$(OBG)
 	ar rcs $(NAME) $(OBG)
+
+
 
 # run:
 # 	./a.out
 clean:
-	rm  $(OBG)
+	rm -rf $(OBG)
 # cleana:
 # 	rm a.out
 fclean: clean
-	rm  $(NAME)
+	rm -rf $(NAME)
+
 re:fclean all
+
