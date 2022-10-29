@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:42:48 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/29 13:11:24 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/29 18:54:10 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <string.h>
 
 int		ft_isalpha(int c);
-
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
@@ -55,5 +54,12 @@ void	ft_putendl_fd(char *s, int fd);
 char	*ft_itoa(int n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	ft_putnbr_fd(int n, int fd);
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
