@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:00:47 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/28 19:48:00 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/29 08:35:28 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,28 +43,31 @@ int	lnstr(const char *s, int j, char c)
 	return (i);
 }
 
-char	**rmemptystr(char **strs, int ct)
+// char	**rmemptystr(char **strs, int ct)
+// {
+// 	int		i;
+// 	int		k;
+// 	char	**sfinal;
+
+// 	i = 0;
+// 	k = 0;
+// 	sfinal = malloc(sizeof(char *) * (ct + 2));
+// 	while (strs[i])
+// 	{
+// 		if (strs[i][0] != 0)
+// 		{
+// 			sfinal[k] = ft_strdup(strs[i]);
+// 			k++;
+// 		}
+// 		i++;
+// 	}
+// 	sfinal[k] = 0;
+// 	return (sfinal);
+// }
+char **ft_optimize(char **str , c)
 {
-	int		i;
-	int		k;
-	char	**sfinal;
-
-	i = 0;
-	k = 0;
-	sfinal = malloc(sizeof(char *) * (ct + 2));
-	while (strs[i])
-	{
-		if (strs[i][0] != 0)
-		{
-			sfinal[k] = ft_strdup(strs[i]);
-			k++;
-		}
-		i++;
-	}
-	sfinal[k] = 0;
-	return (sfinal);
+	
 }
-
 char	**ft_split(char *s, char c)
 {
 	char	set[2];
@@ -87,11 +90,11 @@ char	**ft_split(char *s, char c)
 	{
 		if (s[j] == c || !s[j + 1])
 		{
-			strs[i] = malloc(x + 1);
-			if (strs[i] == NULL)
-				return (NULL);
-			// if (!(strs[i] = malloc(x + 1)))
+			// strs[i] = malloc(x + 1);
+			// if (strs[i] == NULL)
 			// 	return (NULL);
+			// // if (!(strs[i] = malloc(x + 1)))
+			// // 	return (NULL);
 			if (s[j + 1] == 0)
 				j++;
 			strs[i] = ft_substr(s, j - x, x);
