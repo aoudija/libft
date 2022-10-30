@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 12:40:48 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/30 12:40:58 by aoudija          ###   ########.fr       */
+/*   Created: 2022/10/30 10:04:15 by aoudija           #+#    #+#             */
+/*   Updated: 2022/10/30 10:18:09 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.a"
+#include "libft.h"
 
-int main()
+int	ft_lstsize(t_list *lst)
 {
-	t_list *n1, *n2, *n3;
+	int	i;
 
-	n1 = ft_lstnew((void *)12);
-	n2 = ft_lstnew((void *)13);
-	n3 = ft_lstnew((void *)14);
-
-	n1->next = n2;
-	n2->next = n3;
-	n3->next = NULL;
-	t_list  *new;
-	
-	new = ft_lstnew((void *)15);
-	ft_lstadd_front(&n1, new);
-	t_list *tmp;
-	tmp = new;	
-	while (tmp)
+	i = 0;
+	while (lst)
 	{
-		printf("%d\n",(int)tmp->content);
-		tmp = tmp->next;
-	}
-	
+		lst = lst->next;
+	}	
+	return (i);
 }

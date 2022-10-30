@@ -20,8 +20,6 @@ all:$(NAME)
 $(NAME):$(OBG)
 	ar rcs $(NAME) $(OBG)
 
-
-
 # run:
 # 	./a.out
 clean:
@@ -32,4 +30,4 @@ fclean: clean
 	rm -rf $(NAME)
 
 re:fclean all
-
+bonus:$(NAME)
