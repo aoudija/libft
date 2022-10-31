@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:08:41 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/30 13:21:15 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/31 10:12:44 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list *tmp;
 
-	tmp = &lst;
+	tmp = *lst;
 	while (tmp)
 	{
-		ft_lstdelone(tmp);
+		del(tmp->content);
 		tmp = tmp->next;
 	}
 	lst = NULL;

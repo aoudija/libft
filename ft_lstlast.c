@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 10:19:05 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/30 12:49:43 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/31 18:06:19 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*tmp;
-	int		len;
-
-	len = ft_lstsize(lst);
-	tmp = lst;
-	while (len > 0)
+	if (!lst)
+		return (NULL);
+	while(lst->next)
 	{
-		tmp = tmp.next;
-		len--;
+		lst = lst->next;
 	}
-	return (tmp);
+	return (lst);
 }

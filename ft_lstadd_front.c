@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 18:55:40 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/30 12:44:22 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/10/31 15:37:16 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = lst;
+	// if (!new && !lst)
+	// 	return ;
+	new->next = *lst;
+	*lst = new;
 }
