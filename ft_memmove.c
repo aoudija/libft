@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:14:45 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/21 22:40:55 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/01 10:31:50 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	char	*d;
 	char	*s;
 
+	if (!dst && !src)
+		return (NULL);
 	d = (char *) dst;
 	s = (char *) src;
 	if (d > s)
