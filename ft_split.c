@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:00:47 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/29 10:35:10 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/02 18:39:04 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	**amin(char **str, char c, char *s)
 		str[x++] = ft_substr(s, j - i, i);
 		if (!str)
 			return (ft_free(str));
-		while (s[j] && s[j] == c)
+		while (s[j] == c)
 			j++;
 		i = 0;
 	}
@@ -69,7 +69,7 @@ char	**amin(char **str, char c, char *s)
 	return (str);
 }
 
-char	**ft_split(char *ss, char c)
+char	**ft_split(char const *ss, char c)
 {
 	char	set[2];
 	char	*s;

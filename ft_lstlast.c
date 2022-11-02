@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 10:19:05 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/31 18:06:19 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/01 11:05:14 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
-	while(lst->next)
+	while (lst->next)
 	{
 		lst = lst->next;
 	}
