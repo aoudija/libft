@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:00:47 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/02 18:39:04 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/04 20:29:36 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,15 @@ char	**amin(char **str, char c, char *s)
 	i = 0;
 	j = 0;
 	x = 0;
-	while (s[j])
+	while (j < (int)ft_strlen(s))
 	{
-		while (s[j] && s[j] != c)
-		{	
+		while (s[j])
+		{
+			if (s[j] == c)
+				break;
 			i++;
 			j++;
-		}	
+		}
 		str[x++] = ft_substr(s, j - i, i);
 		if (!str)
 			return (ft_free(str));
@@ -69,31 +71,28 @@ char	**amin(char **str, char c, char *s)
 	return (str);
 }
 
-char	**ft_split(char const *ss, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	set[2];
-	char	*s;
+	char	*ss;
 	char	**strs;
 	int		x;
 
 	set[0] = c;
 	set[1] = 0;
-	s = ft_strtrim(ss, set);
-	x = countc(s, c);
-	if (s == NULL || s[0] == 0)
-	{
-		strs = malloc(sizeof(char *));
-		strs[0] = 0;
-		free(s);
-		return (strs);
-	}
+	ss = ft_strtrim(s, set);
+	// printf("%s\n",ss);
+	// printf("%c\n",ss[5]);
+	if (ss == NULL)
+		return (NULL);
+	x = countc(ss, c);
 	strs = malloc(sizeof(char *) * (x + 2));
 	if (!(strs))
 	{
-		free(s);
+		free(ss);
 		return (NULL);
 	}
-	strs = amin(strs, c, s);
-	free (s);
+	strs = amin(strs, c, ss);
+	free (ss);
 	return (strs);
 }

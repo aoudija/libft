@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:30:30 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/29 09:51:00 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/04 17:01:44 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	ft_atoi(const char *str)
 			s *= -1;
 		i++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nb = nb * 10 + (str[i] - 48);
+		nb = nb * 10 + (str[i] - '0');
 		i++;
 	}
 	return (nb * s);

@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:02:03 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/02 16:11:23 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/04 17:18:12 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,24 @@ char	*ft_itoa(int n)
 	int		i;
 	long	nb;
 
-	nb = n;
+	nb = (long)n;
 	i = ct(nb);
 	str = malloc(i + 1);
 	if (!str)
 		return (NULL);
-	str[i--] = 0;
 	if (nb == 0)
 	{
-		str[0] = 48;
+		str[0] = '0';
 	}
 	if (nb < 0)
 	{
 		str[0] = '-';
 		nb = nb * -1;
 	}
+	str[i--] = 0;
 	while (nb > 0)
 	{
-		str[i--] = nb % 10 + 48;
+		str[i--] = nb % 10 + '0';
 		nb = nb / 10;
 	}
 	return (str);
