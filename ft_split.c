@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:00:47 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/04 20:29:36 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/07 10:53:23 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	*ft_free(char **table)
 	return (NULL);
 }
 
-char	**amin(char **str, char c, char *s)
+char	**ft_optimiz(char **str, char c, char *s)
 {
 	int	i;
 	int	j;
@@ -56,7 +56,7 @@ char	**amin(char **str, char c, char *s)
 		while (s[j])
 		{
 			if (s[j] == c)
-				break;
+				break ;
 			i++;
 			j++;
 		}
@@ -81,8 +81,6 @@ char	**ft_split(char const *s, char c)
 	set[0] = c;
 	set[1] = 0;
 	ss = ft_strtrim(s, set);
-	// printf("%s\n",ss);
-	// printf("%c\n",ss[5]);
 	if (ss == NULL)
 		return (NULL);
 	x = countc(ss, c);
@@ -92,7 +90,7 @@ char	**ft_split(char const *s, char c)
 		free(ss);
 		return (NULL);
 	}
-	strs = amin(strs, c, ss);
+	strs = ft_optimiz(strs, c, ss);
 	free (ss);
 	return (strs);
 }

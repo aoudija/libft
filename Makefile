@@ -22,15 +22,15 @@ OBG = $(FILES:.c=.o)
 all:$(NAME)
 
 $(NAME):$(OBG)
-	ar rcs $(NAME) $(OBG)
+	ar rc $(NAME) $(OBG)
 
 clean:
-	rm -rf $(OBG) $(OBGB)
+	rm -f $(OBG) $(OBGB)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re:fclean all
 
 bonus:$(NAME) $(OBGB)
-	ar rcs $(NAME) $(OBGB)
+	ar rc $(NAME) $(OBGB)

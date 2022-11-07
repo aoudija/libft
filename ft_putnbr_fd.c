@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 21:17:16 by aoudija           #+#    #+#             */
-/*   Updated: 2022/10/29 13:56:58 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/05 11:34:28 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
 
-	nb = n;
+	nb = (long)n;
 	if (nb < 0)
 	{
 		ft_putchar_fd('-', fd);

@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:14:45 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/03 09:11:30 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/07 14:54:00 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		}
 	}
 	else
-		ft_memcpy(d, s, n);
+		ft_memcpy(dst, src, n);
 	return (d);
 }

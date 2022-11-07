@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:59:01 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/04 09:24:32 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/07 10:56:01 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		d;
 	int		s;
 
+	if (!s1 || !s2)
+		return (NULL);
 	d = ft_strlen(s1);
 	s = ft_strlen(s2);
 	len = d + s;

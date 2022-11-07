@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:00:16 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/01 11:04:59 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/06 11:36:10 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
+	if (!lst || !del)
+		return ;
 	del (lst->content);
 	free (lst);
 }
