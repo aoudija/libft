@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:42:48 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/07 18:35:10 by aoudija          ###   ########.fr       */
+/*   Updated: 2023/01/06 15:43:15 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
-int		strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *buf1, const void *buf2, size_t count);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -52,7 +52,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 char	*ft_itoa(int n);
 void	*ft_memchr(const void *s, int c, size_t n);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int n, int ffd);
 typedef struct s_list
 {
 	void			*content;
